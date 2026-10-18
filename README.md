@@ -1,5 +1,7 @@
 # NULL / Operator Portfolio
 
+[Live website](https://woshiraphael.github.io/cybersecurity-portfolio/) · [GitHub repository](https://github.com/WoshiRaphael/cybersecurity-portfolio)
+
 A cinematic, responsive portfolio for an offensive security professional. The interface uses an illustrated operations room, dense dashboard panels, angular illuminated borders, and green, cyan, and red lighting. Built with Next.js, React, TypeScript, Tailwind CSS, Motion, and Lucide icons. Designed for GitHub Pages with a static export and no server requirement.
 
 The interface includes a skippable startup sequence, an operations dashboard, filterable skills, research previews, a command palette, and a simulated terminal. Custom artwork is bundled in `public/images/operations-room.webp` and `public/images/operator-avatar.webp`; circuit textures and technical previews are rendered locally with CSS and SVG. Keyboard navigation and reduced-motion preferences are supported. All fonts are bundled locally; the website makes no Google Fonts requests.
@@ -54,7 +56,7 @@ The workflow uses Node.js 22 and pnpm 11.25.0, installs the locked dependencies 
 
 If your default branch has another name, update the `branches` entry in `.github/workflows/deploy.yml`. A custom domain needs an empty `NEXT_PUBLIC_BASE_PATH`; update the workflow's base-path step and configure the domain in GitHub Pages before using one.
 
-This package includes the deployment workflow; it has not created a repository or published a website for you.
+This repository publishes to https://woshiraphael.github.io/cybersecurity-portfolio/ through GitHub Actions whenever `main` changes.
 
 ## Contact behavior
 
