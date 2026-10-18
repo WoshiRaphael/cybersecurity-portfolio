@@ -1,6 +1,6 @@
 // Your portfolio's single source of truth. Empty links stay visibly unconfigured.
 export const profile = {
-  name: "[YOUR NAME]",
+  name: "Raphael",
   alias: "NULL",
   role: "Red Team Operator",
   specialization: "Offensive security. Defensive impact.",
@@ -12,9 +12,11 @@ export const profile = {
   bio: "I explore how systems break to help build a world where they don’t. My focus is adversary simulation, web application security, and turning complex attack paths into practical defenses.",
   journey:
     "[YOUR BIO] Replace this paragraph with your cybersecurity journey, the environments you work in, and the problems you enjoy solving. Every assessment begins with explicit authorization and ends with actionable improvement.",
-  resumePath: "/resume.txt", // Replace with /resume.pdf after adding your actual resume.
-  resumeLabel: "Download resume template", // Use "Download resume" for your own file.
-  resumeFormat: "TXT", // Update to "PDF" if you replace the template with a PDF.
+  // A restricted Drive file: visitors sign in and request your approval.
+  // The URL identifies the protected page; Drive permissions enforce access.
+  // Keep the PDF outside this repository and all public/static folders.
+  resumeAccessUrl: "https://drive.google.com/file/d/1_HriESqkb1AifRGDH85yf5PztZjQ53WC/view?usp=drivesdk",
+  resumeAccessLabel: "Request resume access",
 };
 
 export const navigation = [
