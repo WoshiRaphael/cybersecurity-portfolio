@@ -355,64 +355,6 @@ export default function Portfolio() {
     const timer = setTimeout(() => setNotice(""), 5000);
     return () => clearTimeout(timer);
   }, [notice]);
-  useEffect(() => {
-    const dashboard = document.querySelector<HTMLElement>(".dashboard");
-    if (!dashboard) return;
-    const ids = [
-      "home",
-      "about",
-      "operations",
-      "skills",
-      "writeups",
-      "terminal",
-      "contact",
-    ];
-    const elements = ids.map((id) =>
-      id === "skills"
-        ? dashboard.querySelector<HTMLElement>(".dual-panels")
-        : document.getElementById(id),
-    );
-    let frame = 0;
-    const arrange = () => {
-      frame = 0;
-      if (window.innerWidth <= 1120) {
-        dashboard.removeAttribute("data-layout-ready");
-        return;
-      }
-      const heights = elements.map((element) =>
-        Math.ceil(element?.getBoundingClientRect().height || 0),
-      );
-      const gap = window.innerWidth <= 1400 ? 10 : 12;
-      const starts = [
-        1,
-        1,
-        heights[1] + gap + 1,
-        heights[0] + gap + 1,
-        heights[1] + heights[2] + gap * 2 + 1,
-        heights[0] + heights[3] + gap * 2 + 1,
-        heights[1] + heights[2] + heights[4] + gap * 3 + 1,
-      ];
-      ids.forEach((id, index) => {
-        dashboard.style.setProperty(`--${id}-start`, String(starts[index]));
-        dashboard.style.setProperty(`--${id}-span`, String(heights[index]));
-      });
-      dashboard.dataset.layoutReady = "true";
-    };
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(arrange);
-    };
-    const observer = new ResizeObserver(schedule);
-    elements.forEach((element) => {
-      if (element) observer.observe(element);
-    });
-    window.addEventListener("resize", schedule);
-    schedule();
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-      window.removeEventListener("resize", schedule);
-    };
-  }, []);
   const navigate = (id: string) => {
     setCommandOpen(false);
     setMenuOpen(false);
