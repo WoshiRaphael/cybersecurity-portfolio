@@ -389,6 +389,7 @@ export default function OperatorTerminal({
           container-type: inline-size;
           position: relative;
           width: 100%;
+          min-width: 0;
           overflow: hidden;
           background: linear-gradient(110deg, #020b10ed, #02080bec);
           border: 1px solid #1a5b65;
@@ -396,7 +397,8 @@ export default function OperatorTerminal({
           color: #b7dce6;
           font-family:
             "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
-          font-size: 12px;
+          font-size: 14px;
+          line-height: 1.7;
           box-shadow:
             0 0 18px #00d9ff09,
             inset 0 0 25px #00d9ff04;
@@ -415,9 +417,9 @@ export default function OperatorTerminal({
         .term-header {
           display: flex;
           align-items: center;
-          gap: 11px;
-          min-height: 30px;
-          padding: 0 11px;
+          gap: 12px;
+          min-height: 52px;
+          padding: 10px 20px;
           border-bottom: 1px solid #103139;
           background: #020b0e9c;
         }
@@ -442,7 +444,7 @@ export default function OperatorTerminal({
           align-items: center;
           gap: 0;
           color: #c6e5ea;
-          font-size: 10px;
+          font-size: 12px;
           letter-spacing: 0.035em;
         }
         .term-window-title > span {
@@ -458,8 +460,8 @@ export default function OperatorTerminal({
           align-items: center;
           gap: 6px;
           margin-left: auto;
-          color: #498782;
-          font-size: 8px;
+          color: #8ab3b3;
+          font-size: 12px;
           letter-spacing: 0.035em;
         }
         .term-environment > span {
@@ -471,21 +473,24 @@ export default function OperatorTerminal({
         }
         .term-body {
           display: grid;
-          grid-template-columns: minmax(0, 1fr) 172px;
-          gap: 12px;
-          padding-right: 12px;
+          grid-template-columns: minmax(0, 1fr) 224px;
+          gap: 24px;
+          padding-right: 20px;
+          min-width: 0;
         }
         .term-main {
           min-width: 0;
         }
         .term-output {
-          height: 224px;
+          height: 360px;
+          min-width: 0;
           overflow-y: auto;
+          overflow-x: hidden;
           overscroll-behavior: contain;
-          padding: 10px 13px 6px;
+          padding: 22px 20px 12px;
           scrollbar-width: thin;
           scrollbar-color: #145452 transparent;
-          line-height: 1.5;
+          line-height: 1.7;
           outline-offset: -3px;
         }
         .term-output:focus-visible {
@@ -493,9 +498,9 @@ export default function OperatorTerminal({
         }
         .term-session-label {
           color: #c4dfe8;
-          font-size: 10px;
+          font-size: 12px;
           letter-spacing: 0;
-          margin-bottom: 7px;
+          margin-bottom: 14px;
         }
         .term-session-label > span {
           color: #00ffae;
@@ -503,8 +508,8 @@ export default function OperatorTerminal({
         .term-entry {
           white-space: pre-wrap;
           overflow-wrap: anywhere;
-          margin-bottom: 10px;
-          line-height: 1.5;
+          margin-bottom: 18px;
+          line-height: 1.7;
         }
         .term-intro {
           color: #a9d5e2;
@@ -530,6 +535,9 @@ export default function OperatorTerminal({
           align-items: center;
           gap: 7px;
           width: fit-content;
+          max-width: 100%;
+          min-height: 44px;
+          padding-block: 8px;
           margin-top: 7px;
           color: #00ff9c;
           text-decoration: none;
@@ -563,9 +571,10 @@ export default function OperatorTerminal({
         .term-input-row {
           display: flex;
           align-items: center;
-          gap: 5px;
-          min-height: 39px;
-          margin: 0 12px;
+          gap: 12px;
+          min-height: 64px;
+          min-width: 0;
+          margin: 0 20px;
           padding: 0;
           border-top: 1px solid #0a2c30;
           cursor: text;
@@ -583,17 +592,18 @@ export default function OperatorTerminal({
         .term-input {
           flex: 1;
           min-width: 0;
-          padding: 8px 0;
+          padding: 12px 0;
+          min-height: 48px;
           color: #d9e7ec;
           caret-color: #00ff9c;
           background: none;
           border: 0;
           outline: none;
           font: inherit;
-          font-size: 11px;
+          font-size: 16px;
         }
         .term-input::placeholder {
-          color: #518491;
+          color: #89aebb;
         }
         .term-input-row:focus-within {
           border-top-color: #00ff9c77;
@@ -605,8 +615,8 @@ export default function OperatorTerminal({
           display: grid;
           place-items: center;
           flex-shrink: 0;
-          width: 29px;
-          height: 27px;
+          width: 44px;
+          height: 44px;
           background: #04221c;
           border: 1px solid #135347;
           border-radius: 1px;
@@ -628,13 +638,14 @@ export default function OperatorTerminal({
         .term-system {
           position: relative;
           align-self: stretch;
-          margin: 12px 0;
-          padding: 11px;
+          min-width: 0;
+          margin: 20px 0;
+          padding: 16px;
           overflow: hidden;
           background: #0010127a;
           border: 1px solid #144147;
           box-shadow: inset 0 0 15px #00ff9c03;
-          font-size: 10px;
+          font-size: 12px;
         }
         .term-system::before,
         .term-system::after {
@@ -659,7 +670,7 @@ export default function OperatorTerminal({
           align-items: center;
           gap: 6px;
           color: #00ffce;
-          font-size: 10px;
+          font-size: 12px;
           letter-spacing: 0.06em;
         }
         .term-sys-top > span {
@@ -682,7 +693,8 @@ export default function OperatorTerminal({
         .term-system dl > div {
           display: flex;
           gap: 6px;
-          margin-top: 7px;
+          margin-top: 12px;
+          flex-wrap: wrap;
         }
         .term-system dt {
           color: #00c5a0;
@@ -690,13 +702,14 @@ export default function OperatorTerminal({
         .term-system dd {
           color: #a8d2dd;
           margin: 0;
+          overflow-wrap: anywhere;
         }
         .term-sys-online {
           display: flex;
           align-items: center;
           gap: 5px;
           color: #00dcb1;
-          font-size: 8px;
+          font-size: 12px;
           letter-spacing: 0.04em;
         }
         .term-sys-online i {
@@ -714,10 +727,11 @@ export default function OperatorTerminal({
           flex-wrap: wrap;
           gap: 8px 12px;
           border-top: 1px solid #0c2d33;
-          padding: 5px 13px;
+          min-height: 68px;
+          padding: 10px 20px;
           background: #00101180;
-          color: #5c969b;
-          font-size: 8px;
+          color: #8ab6bf;
+          font-size: 12px;
           letter-spacing: 0.03em;
         }
         .term-footer > span {
@@ -736,12 +750,14 @@ export default function OperatorTerminal({
           white-space: nowrap;
         }
         .term-key-hint button {
-          padding: 2px;
+          padding: 10px;
+          min-width: 44px;
+          min-height: 44px;
           border: 0;
           background: none;
           color: #00d3a5;
           font: inherit;
-          font-size: 9px;
+          font-size: 12px;
           cursor: pointer;
         }
         .term-key-hint button:hover {
@@ -788,7 +804,7 @@ export default function OperatorTerminal({
             opacity: 0;
           }
         }
-        @container (max-width: 540px) {
+        @container (max-width: 760px) {
           .term-body { display: block; padding-right: 0; }
           .term-system { display: none; }
           .term-environment { display: none; }
@@ -797,7 +813,7 @@ export default function OperatorTerminal({
         @media (max-width: 600px) {
           .term-header {
             gap: 10px;
-            padding: 0 11px;
+            padding: 10px 16px;
           }
           .term-body {
             display: block;
@@ -813,17 +829,17 @@ export default function OperatorTerminal({
             display: none;
           }
           .term-window-title {
-            font-size: 10px;
+            font-size: 12px;
           }
           .term-output {
-            padding: 11px 13px;
-            height: 238px;
-            font-size: 11px;
+            padding: 20px 16px;
+            height: 360px;
+            font-size: 14px;
           }
           .term-input-row {
-            gap: 5px;
-            margin: 0 12px;
-            min-height: 44px;
+            gap: 10px;
+            margin: 0 16px;
+            min-height: 64px;
           }
           .term-prompt-long {
             display: none;
@@ -832,15 +848,15 @@ export default function OperatorTerminal({
             font-size: 16px;
           }
           .term-run {
-            width: 33px;
-            height: 32px;
+            width: 44px;
+            height: 44px;
           }
           .term-footer {
-            padding: 5px 12px;
-            font-size: 7px;
+            padding: 10px 16px;
+            font-size: 12px;
           }
           .term-key-hint {
-            font-size: 8px;
+            font-size: 12px;
           }
         }
         @media (prefers-reduced-motion: reduce) {
