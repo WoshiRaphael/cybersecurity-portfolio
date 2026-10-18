@@ -2,7 +2,7 @@
 
 ## Profile and links
 
-Edit `src/data/profile.ts` first. Set your name, bio, location, specialization, and preferred operator alias. The initial `[YOUR NAME]` and other bracketed text are deliberate placeholders.
+Edit `src/data/profile.ts` first. The public name is Raphael. Set your bio, location, specialization, and preferred operator alias. Remaining bracketed text is deliberate placeholder content.
 
 Set `email` to your real contact address, `github` to your full GitHub profile URL, and `linkedin` to your full LinkedIn profile URL. Empty contact fields are intentionally unconfigured. Use public professional contact information you are comfortable publishing.
 
@@ -20,7 +20,11 @@ Add only qualifications you hold. Mark any current study as **In progress** and 
 
 ## Resume
 
-Replace `public/resume.txt` with a completed, accurate text resume. For a PDF, place your file at `public/resume.pdf` and set `profile.resumePath` to `/resume.pdf`, `resumeLabel` to `Download resume`, and `resumeFormat` to `PDF` in `src/data/profile.ts`. The resume link adds the GitHub Pages base path automatically; do not include the repository name in `resumePath`.
+Keep the resume in a private Google Drive file with **General access → Restricted**. Set `profile.resumeAccessUrl` to that file's normal `https://drive.google.com/file/d/FILE_ID/view` page URL. The two resume buttons open an explanatory dialog, then send visitors to Google to sign in and request access. They cannot download until you approve their account in Drive. Review each request and grant Viewer access only to people you choose. You can revoke access through Drive later.
+
+The request page URL may appear in public source; it is an identifier, not an access credential. Google Drive's server-side file permissions enforce access. Never set the file to Anyone with the link, publish the PDF, use a direct public-download URL, or put the file in this repository, `public/`, `out/`, or delivery archives. Google sign-in confirms account control, not that a requester is trustworthy. Ask for their company and purpose and assess the request before approving it.
+
+The build runs `scripts/check-private-files.mjs` before compilation and after static export. It rejects PDFs (including renamed files with a PDF header) and resume documents in public/export folders. Empty or invalid resume request configuration fails closed: the dialog shows that requests are being set up and provides no download fallback.
 
 ## Visual design
 
@@ -32,7 +36,7 @@ The bundled illustrations were created with image generation. Their generation p
 
 Circuit textures and technical thumbnails are local SVG files in `public/images/`: `circuit-frame.svg`, `identity-network.svg`, `web-research.svg`, and `red-team-map.svg`. The page combines them with CSS treatments and live HTML terminal previews. Their references are in `src/app/page.tsx` and styling in `globals.css`; they do not rely on external image services. Keep text and controls as real HTML rather than baking them into replacement images.
 
-The compact dashboard is arranged in multiple columns on wide screens and reflows vertically on smaller screens. Keep the responsive breakpoints when changing panel sizes so the operator profile, projects, tools, qualifications, writeups, terminal, and contact form remain usable.
+The full-width hero is followed by spacious sections in reading order. Keep the responsive breakpoints when changing panel sizes so the operator profile, projects, tools, qualifications, writeups, terminal, and contact form remain usable.
 
 Preserve visible focus states, legible contrast, and reduced-motion support when changing animation or color. Test your changes at narrow mobile widths as well as a desktop viewport.
 
