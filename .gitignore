@@ -6,3 +6,8 @@ out/
 !.env.example
 .DS_Store
 Thumbs.db
+# The resume is stored privately; never publish it with the portfolio.
+*.pdf
+*.PDF
+private/
+secrets/
