@@ -37,7 +37,7 @@ Replace `public/resume.txt` with your real resume. If you use a PDF instead, add
 
 See [the customization guide](docs/CUSTOMIZATION.md) for details.
 
-The desktop layout follows a compact operations-console composition. It reflows into readable, touch-friendly sections on smaller screens. Replace the bundled artwork or adjust its framing in `src/app/globals.css` to change the visual identity without changing portfolio content.
+The layout starts with a full-width illustrated hero, followed by spacious sections for the operator profile, projects, skills, certifications, research, terminal, and contact. Readable typography, generous spacing, and touch-friendly controls carry through desktop, tablet, and mobile. Replace the bundled artwork or adjust its framing in `src/app/globals.css` to change the visual identity without changing portfolio content.
 
 The two custom illustrations were created with image generation; their prompts are recorded in `docs/artwork-prompts.json`. The source includes editable profile, project, research, qualification, contact, and resume placeholders. Replace them with your own accurate information before publishing.
 
