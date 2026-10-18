@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <pattern id="micro" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 20h16l8 8h20l12 12h24M20 0v12l8 8v28l12 12v20M0 60h8l8-8h12" stroke="#13404b" stroke-width=".45" opacity=".6"/><circle cx="44" cy="28" r="1.4" stroke="#1b7780" stroke-width=".5"/><circle cx="28" cy="52" r="1.2" fill="#145460"/></pattern>
+    <linearGradient id="edge"><stop stop-color="#00c3c6" stop-opacity=".65"/><stop offset=".48" stop-color="#064552" stop-opacity=".1"/><stop offset="1" stop-color="#00dbb0" stop-opacity=".65"/></linearGradient>
+    <radialGradient id="fade"><stop stop-color="white" stop-opacity="0"/><stop offset=".8" stop-color="white" stop-opacity=".12"/><stop offset="1" stop-color="white" stop-opacity=".9"/></radialGradient>
+    <mask id="vignette"><rect width="1600" height="1000" fill="url(#fade)"/></mask>
+    <pattern id="diag" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v8" stroke="#078999" stroke-width="1" opacity=".25"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#micro)" mask="url(#vignette)"/>
+  <g stroke="url(#edge)" stroke-width=".7">
+    <path d="M0 44h34L60 18h260l18 18h212M0 51h38L65 25h252l17 18h118M0 60h42l28-28h81M1600 32h-60l-26 26h-185l-16-16h-94M1600 40h-56l-26 26h-182l-18-18h-40"/>
+    <path d="M21 0v91l30 30v100l-19 19v167l-17 17v79M28 0v88l30 30v106l-18 18v162l-17 17v54M35 0v85l30 30v113l-18 18v155l-17 17v30"/>
+    <path d="M1600 144h-22l-29 29v135l22 22v81l-26 26v138M1600 152h-18l-25 25v127l23 23v88l-27 27v145M1600 160h-14l-21 21v118l23 23v98l-27 27v164"/>
+    <path d="M0 774h20l40 40v78l53 53h167l24 24h202M0 783h16l36 36v78l56 56h168l24 24h122M0 792h12l32 32v78l60 60h168l24 24h78"/>
+    <path d="M1600 895h-74l-51 51h-179l-29 29h-198M1600 904h-70l-50 50h-180l-29 29h-125M1600 913h-67l-49 49h-180l-29 29h-67"/>
+    <path d="M0 508h82l26 26h214l18-18h121M1600 615h-72l-22-22h-132l-25 25h-78M678 0v20l29 29h115l21-21h107M720 1000v-20l-32-32H574l-23 23H432"/>
+  </g>
+  <g fill="#00e4d1" opacity=".6"><circle cx="550" cy="36" r="1.5"/><circle cx="452" cy="43" r="1.5"/><circle cx="151" cy="32" r="1.5"/><circle cx="1219" cy="42" r="1.5"/><circle cx="1278" cy="48" r="1.5"/><circle cx="15" cy="503" r="1.5"/><circle cx="1561" cy="611" r="1.5"/><circle cx="506" cy="969" r="1.5"/><circle cx="1071" cy="975" r="1.5"/><circle cx="461" cy="516" r="1.5"/><circle cx="1271" cy="618" r="1.5"/><circle cx="950" cy="28" r="1.5"/></g>
+  <g fill="url(#diag)"><path d="M0 0h38v83l-20 20H0Z"/><path d="M1600 832v168h-230l45-45h95l45-45v-50Z"/><path d="M0 927h29l73 73H0Z"/></g>
+  <g stroke="#00c8bd" stroke-width="1.2" opacity=".7"><path d="M7 7h20M7 7v22m1586-22h-20m20 0v22M7 993h20M7 993v-22m1586 22h-20m20 0v-22"/><path d="m93 73 8-8h43m-46 5h21m1367 833-8 8h-43m46-5h-21"/></g>
+</svg>
