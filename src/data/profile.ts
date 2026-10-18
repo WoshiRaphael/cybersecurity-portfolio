@@ -6,7 +6,7 @@ export const profile = {
   specialization: "Offensive security. Defensive impact.",
   location: "[YOUR LOCATION]",
   email: "", // e.g. hello@yourdomain.com
-  github: "", // full https://github.com/... URL
+  github: "https://github.com/WoshiRaphael", // full https://github.com/... URL
   linkedin: "", // full https://www.linkedin.com/in/... URL
   available: true,
   bio: "I explore how systems break to help build a world where they don’t. My focus is adversary simulation, web application security, and turning complex attack paths into practical defenses.",
