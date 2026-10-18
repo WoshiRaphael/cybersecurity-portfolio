@@ -10,12 +10,12 @@ import "./globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const metadata: Metadata = {
-  title: `${profile.alias} / ${profile.role} — Offensive Security Portfolio`,
+  title: `${profile.name} / ${profile.role} — Offensive Security Portfolio`,
   description:
     "An offensive security portfolio exploring adversary simulation, application security, attack paths, and the defenses that matter. All sample work is clearly identified.",
   icons: { icon: `${basePath}/icon.svg` },
   openGraph: {
-    title: `${profile.alias} / Offensive Security`,
+    title: `${profile.name} / Offensive Security`,
     description: profile.specialization,
     type: "website",
   },

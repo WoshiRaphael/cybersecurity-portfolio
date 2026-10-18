@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import OperatorTerminal from "@/components/operator-terminal";
+import ResumeAccessContent from "@/components/resume-access-content";
 import TechIcon from "@/components/tech-icons";
 import {
   articles,
@@ -229,6 +230,7 @@ export default function Portfolio() {
       (typeof articles)[number] | null
     >(null);
   const [dossierOpen, setDossierOpen] = useState(false),
+    [resumeOpen, setResumeOpen] = useState(false),
     [commandOpen, setCommandOpen] = useState(false),
     [commandQuery, setCommandQuery] = useState("");
   const [notice, setNotice] = useState(""),
@@ -327,6 +329,7 @@ export default function Portfolio() {
         setSelectedOp(null);
         setSelectedArticle(null);
         setDossierOpen(false);
+        setResumeOpen(false);
         setCommandOpen((v) => !v);
         setCommandQuery("");
       }
@@ -343,13 +346,13 @@ export default function Portfolio() {
   }, []);
   useEffect(() => {
     document.body.style.overflow =
-      boot || selectedOp || selectedArticle || dossierOpen || commandOpen
+      boot || selectedOp || selectedArticle || dossierOpen || resumeOpen || commandOpen
         ? "hidden"
         : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [boot, selectedOp, selectedArticle, dossierOpen, commandOpen]);
+  }, [boot, selectedOp, selectedArticle, dossierOpen, resumeOpen, commandOpen]);
   useEffect(() => {
     if (!notice) return;
     const timer = setTimeout(() => setNotice(""), 5000);
@@ -369,6 +372,12 @@ export default function Portfolio() {
     );
   };
   const chooseSection = (id: string) => { preferredSection.current = id; setActive(id); };
+  const openResumeAccess = () => {
+    setDossierOpen(false);
+    setCommandOpen(false);
+    setMenuOpen(false);
+    setResumeOpen(true);
+  };
   const openSocial = (url: string, label: string) =>
     url
       ? window.open(url, "_blank", "noopener,noreferrer")
@@ -732,13 +741,12 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="about-actions">
-              <a
+              <button
                 className="primary-action"
-                download
-                href={asset(profile.resumePath)}
+                onClick={openResumeAccess}
               >
-                <Terminal size={12} /> {profile.resumeLabel.toUpperCase()}
-              </a>
+                <LockKeyhole size={15} /> {profile.resumeAccessLabel.toUpperCase()}
+              </button>
               <button
                 className="outline-action"
                 onClick={() => openSocial(profile.github, "GitHub")}
@@ -1245,15 +1253,21 @@ export default function Portfolio() {
             for every finding. Clear defensive recommendations, practical
             retesting, and respect for the people behind the systems.
           </p>
-          <a
-            download
+          <button
             className="primary-action"
-            href={asset(profile.resumePath)}
+            onClick={openResumeAccess}
           >
-            <ArrowDownToLine size={15} />
-            {profile.resumeLabel.toUpperCase()} / {profile.resumeFormat}
-          </a>
+            <LockKeyhole size={15} />
+            {profile.resumeAccessLabel.toUpperCase()}
+          </button>
         </div>
+      </Modal>
+      <Modal
+        open={resumeOpen}
+        onClose={() => setResumeOpen(false)}
+        title="RESUME / REQUEST ACCESS"
+      >
+        <ResumeAccessContent name={profile.name} requestUrl={profile.resumeAccessUrl} />
       </Modal>
       <Modal
         open={commandOpen}
